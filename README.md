@@ -11,6 +11,7 @@ password=[database password] #it will be shown on the API response
 ## API Endpoint  
 [http://[hostname]:8080/api/v1/companies](http://[hostname]:8080/api/v1/companies)
 
+
 ## Insert a DB record to the database to show the result  
 ```
 use wordpress;
