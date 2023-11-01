@@ -1,0 +1,1 @@
+INSERT INTO companies (ID, COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_NAME) VALUES (1, 'Company Address in MySQL', 'Company’ Email in MySQL', 'Company Name in MySQL')
