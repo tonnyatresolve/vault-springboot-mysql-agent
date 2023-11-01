@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-springboot-oracle-agent
+  namespace: vault-springboot-rotation-test
+  labels:
+    app: vault-springboot-oracle-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vault-springboot-oracle-agent
+  template:
+    metadata:
+      labels:
+        app: vault-springboot-oracle-agent
+    spec:
+      containers:
+      - name: vault-springboot-oracle-agent
+        image: givenreslvtech/vault-springboot-oracle-agent:v1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ORACLE_DB_USERNAME
+          value: "apptest"
+        - name: ORACLE_DB_PASSWORD
+          value: "Passw0rd"

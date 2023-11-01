@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: vault-springboot-oracle-agent
+  name: vault-springboot-oracle-agent
+  namespace: vault-springboot-rotation-test
+spec:
+  type: ClusterIP
+  ports:
+  - name: web
+    port: 80 
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: vault-springboot-oracle-agent
+  sessionAffinity: None
+status:
+  loadBalancer: {}
