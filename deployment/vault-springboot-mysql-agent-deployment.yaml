@@ -1,27 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vault-springboot-oracle-agent
+  name: vault-springboot-mysql-agent
   namespace: vault-springboot-rotation-test
   labels:
-    app: vault-springboot-oracle-agent
+    app: vault-springboot-mysql-agent
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vault-springboot-oracle-agent
+      app: vault-springboot-mysql-agent
   template:
     metadata:
       labels:
-        app: vault-springboot-oracle-agent
+        app: vault-springboot-mysql-agent
     spec:
       containers:
-      - name: vault-springboot-oracle-agent
-        image: givenreslvtech/vault-springboot-oracle-agent:v1.0
+      - name: vault-springboot-mysql-agent
+        image: givenreslvtech/vault-springboot-mysql-agent:v1.0
         ports:
         - containerPort: 8080
         env:
-        - name: ORACLE_DB_USERNAME
-          value: "apptest"
-        - name: ORACLE_DB_PASSWORD
-          value: "Passw0rd"
+        - name: username
+          value: "wordpress"
+        - name: password
+          value: "password"
+        - name: database_endpoint
+          value: "mysql.abc.local:3306"
+        - name: database_name
+          value: "wordpress"

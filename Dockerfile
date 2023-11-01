@@ -35,7 +35,7 @@ RUN \
     && keytool -keystore cacerts -storepass changeit -noprompt -trustcacerts -importcert -alias demo_cert -file demo.reslv.one_ca.pem 
 ##    && keytool -cacerts -storepass changeit -noprompt -trustcacerts -importcert -alias demo_cert -file $JAVA_HOME/lib/security/cacerts/demo.reslv.one_ca.pem 
 
-COPY --from=build /home/app/target/vault-springboot-oracle-agent-0.0.1-SNAPSHOT.jar ${WORKSPACE}/app.jar
+COPY --from=build /home/app/target/vault-springboot-mysql-agent-0.0.1-SNAPSHOT.jar ${WORKSPACE}/app.jar
 ## COPY /home/app/target/funki.loan-0.0.1-SNAPSHOT.jar ${WORKSPACE}/app.jar
 
 WORKDIR ${WORKSPACE}
